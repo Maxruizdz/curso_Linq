@@ -56,5 +56,19 @@ namespace Curso_linq
                    select l;
         
         }
+        public bool elements_conValor_campoStatus() {
+            //expresion method
+           return librosCollection.All(p => p.status != null || p.status != String.Empty);
+
+          
+        
+        }
+
+        public bool libros_public_en2005() {
+
+            
+            return librosCollection.Any(p=> p.PublishedDate.Year ==2005);
+        
+        }
     }
 }
