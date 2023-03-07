@@ -70,5 +70,14 @@ namespace Curso_linq
             return librosCollection.Any(p=> p.PublishedDate.Year ==2005);
         
         }
+
+        public IEnumerable<Book> LibrodePython() {
+            //extensions method
+
+            return librosCollection.Where(p => p.Categories.Contains("Python"));
+
+          
+
+        }
     }
 }
