@@ -109,5 +109,21 @@ namespace Curso_linq
                    
 
         }
+        public IEnumerable<Book> ultimos_libros_java() {
+
+
+            return librosCollection.Where(p=> p.Categories.Contains("Java")).Take(3).OrderByDescending(p=> p.PublishedDate);
+        
+        }
+
+
+        public IEnumerable<Book> TerceryCuartoLibroDeMas400Pag() {
+
+
+
+            return librosCollection.Where(p => p.PageCount > 400).Take(4).Skip(2);
+        
+        }
+
     }
 }

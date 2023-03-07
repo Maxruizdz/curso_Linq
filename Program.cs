@@ -9,8 +9,9 @@ LinqQueries queries = new LinqQueries();
 
 //ImprimirLibros(queries.LibrosDespuesdel2000());
 
-ImprimirLibros(queries.librosconmas_de250pag_TITULO_inAction());
+//ImprimirLibros(queries.librosconmas_de250pag_TITULO_inAction());
 
+ImprimirLibros(queries.ultimos_libros_java());
 void ImprimirLibros(IEnumerable<Book> listLibro) {
 
 
@@ -26,5 +27,6 @@ void ImprimirLibros(IEnumerable<Book> listLibro) {
 
 
 
+     
 }
 
