@@ -1,0 +1,15 @@
+C:\Users\MaxiPC\Curso_Linq\bin\Debug\net6.0\Curso_linq.exe
+C:\Users\MaxiPC\Curso_Linq\bin\Debug\net6.0\Curso_linq.deps.json
+C:\Users\MaxiPC\Curso_Linq\bin\Debug\net6.0\Curso_linq.runtimeconfig.json
+C:\Users\MaxiPC\Curso_Linq\bin\Debug\net6.0\Curso_linq.dll
+C:\Users\MaxiPC\Curso_Linq\bin\Debug\net6.0\Curso_linq.pdb
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.csproj.AssemblyReference.cache
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.AssemblyInfoInputs.cache
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.AssemblyInfo.cs
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.csproj.CoreCompileInputs.cache
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.dll
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\refint\Curso_linq.dll
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.pdb
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\Curso_linq.genruntimeconfig.cache
+C:\Users\MaxiPC\Curso_Linq\obj\Debug\net6.0\ref\Curso_linq.dll
