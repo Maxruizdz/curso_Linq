@@ -11,9 +11,11 @@ namespace Curso_linq
 
         private List<Book> librosCollection = new List<Book>();
         private const string filePath = "books.json";
-        public LinqQueries() {
+        public LinqQueries()
+        {
 
-            using (StreamReader reader = new StreamReader(filePath)) {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
 
 
                 string Json = reader.ReadToEnd();
@@ -24,13 +26,15 @@ namespace Curso_linq
 
         }
 
-        public IEnumerable<Book> Libros() {
+        public IEnumerable<Book> Libros()
+        {
 
 
             return librosCollection;
 
         }
-        public IEnumerable<Book> LibrosDespuesdel2000() {
+        public IEnumerable<Book> LibrosDespuesdel2000()
+        {
 
             //extension method
 
@@ -44,7 +48,8 @@ namespace Curso_linq
         }
 
 
-        public IEnumerable<Book> librosconmas_de250pag_TITULO_inAction() {
+        public IEnumerable<Book> librosconmas_de250pag_TITULO_inAction()
+        {
 
             //Extension method
             //return librosCollection.Where(p => p.PageCount > 250 && p.Title.Contains("in Action"));
@@ -54,29 +59,54 @@ namespace Curso_linq
             return from l in librosCollection
                    where l.PageCount > 250 && l.Title.Contains("in Action")
                    select l;
-        
+
         }
-        public bool elements_conValor_campoStatus() {
+        public bool elements_conValor_campoStatus()
+        {
             //expresion method
-           return librosCollection.All(p => p.status != null || p.status != String.Empty);
+            return librosCollection.All(p => p.status != null || p.status != String.Empty);
 
-          
-        
+
+
         }
 
-        public bool libros_public_en2005() {
+        public bool libros_public_en2005()
+        {
 
-            
-            return librosCollection.Any(p=> p.PublishedDate.Year ==2005);
-        
+
+            return librosCollection.Any(p => p.PublishedDate.Year == 2005);
+
         }
 
-        public IEnumerable<Book> LibrodePython() {
+        public IEnumerable<Book> LibrodePython()
+        {
             //extensions method
 
             return librosCollection.Where(p => p.Categories.Contains("Python"));
 
-          
+
+
+        }
+
+        public IEnumerable<Book> LibrodeJava()
+        {
+
+            return librosCollection.Where(p => p.Categories.Contains("Java")).OrderBy(p => p.Title);
+
+        }
+        public IEnumerable<Book> Libros_conmasde_450paginas() {
+            //extensions method
+
+            // return librosCollection.Where(p => p.PageCount > 450).OrderByDescending(p => p.PageCount);
+
+            //Query expresion
+
+
+            return from libro in librosCollection
+                   where libro.PageCount > 450
+                   orderby libro.PageCount descending
+                   select libro;
+                   
 
         }
     }
