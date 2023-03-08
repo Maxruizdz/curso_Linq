@@ -126,11 +126,30 @@ namespace Curso_linq
         }
         public IEnumerable<Book> primeros3libros_() {
 
-            return librosCollection.Take(3).Select( p=> new Book { Title= p.Title, PageCount =p.PageCount})
+            return librosCollection.Take(3).Select(p => new Book { Title = p.Title, PageCount = p.PageCount });
       
         
         
         }
 
+        public int cant_libre_entre200y500pag() {
+
+            //extension method
+
+            return librosCollection.Count(p => p.PageCount >= 200 && p.PageCount <= 500);
+     
+                   
+
+        }
+        public long cant_libre_entre200y500()
+        {
+
+            //extension method
+
+            return librosCollection.LongCount(p => p.PageCount >= 200 && p.PageCount <= 500);
+
+
+
+        }
     }
 }
