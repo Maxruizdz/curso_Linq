@@ -151,5 +151,19 @@ namespace Curso_linq
 
 
         }
+        public DateTime menor_fechaPublicacion() {
+
+            return librosCollection.Min(p=>p.PublishedDate );
+
+        
+        
+        }
+        public int libro_conmaspaginas() {
+
+
+            return librosCollection.Max(p=> p.PageCount);
+        
+        }
+
     }
 }
