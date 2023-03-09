@@ -106,14 +106,14 @@ namespace Curso_linq
                    where libro.PageCount > 450
                    orderby libro.PageCount descending
                    select libro;
-                   
+
 
         }
         public IEnumerable<Book> ultimos_libros_java() {
 
 
-            return librosCollection.Where(p=> p.Categories.Contains("Java")).Take(3).OrderByDescending(p=> p.PublishedDate);
-        
+            return librosCollection.Where(p => p.Categories.Contains("Java")).Take(3).OrderByDescending(p => p.PublishedDate);
+
         }
 
 
@@ -122,14 +122,14 @@ namespace Curso_linq
 
 
             return librosCollection.Where(p => p.PageCount > 400).Take(4).Skip(2);
-        
+
         }
         public IEnumerable<Book> primeros3libros_() {
 
             return librosCollection.Take(3).Select(p => new Book { Title = p.Title, PageCount = p.PageCount });
-      
-        
-        
+
+
+
         }
 
         public int cant_libre_entre200y500pag() {
@@ -137,8 +137,8 @@ namespace Curso_linq
             //extension method
 
             return librosCollection.Count(p => p.PageCount >= 200 && p.PageCount <= 500);
-     
-                   
+
+
 
         }
         public long cant_libre_entre200y500()
@@ -153,17 +153,63 @@ namespace Curso_linq
         }
         public DateTime menor_fechaPublicacion() {
 
-            return librosCollection.Min(p=>p.PublishedDate );
+            return librosCollection.Min(p => p.PublishedDate);
 
-        
-        
+
+
         }
         public int libro_conmaspaginas() {
 
 
-            return librosCollection.Max(p=> p.PageCount);
+            return librosCollection.Max(p => p.PageCount);
+
+        }
+        public Book LibroconmenorNumero_Pagina() {
+
+
+
+            return librosCollection.Where(p => p.PageCount > 0).MinBy(p => p.PageCount);
+
+
+        }
+        public Book Libroconfecha_masreciente() {
+
+
+            return librosCollection.MaxBy(p => p.PublishedDate);
+
+        }
+        public int cantidad_Depaginas_deTodosLosLibro() {
+
+
+            return librosCollection.Where(p => p.PageCount >= 0 && p.PageCount <= 500).Sum(p => p.PageCount);
+
+        }
+        public string TitulosDelLibroDespuesdel2015Concatenados() {
+
+            return librosCollection
+                    .Where(p => p.PublishedDate.Year > 2015)
+                    .Aggregate("", (TitulosLibros, next) =>
+                    {
+                        if (TitulosLibros != string.Empty)
+                            TitulosLibros += " - " + next.Title;
+                        else
+                            TitulosLibros += next.Title;
+
+                        return TitulosLibros;
+                    });
+
+
+
+
+        }
+        public double Promedio_caracteres_Titulos() {
+
+            return librosCollection.Where(p=>p.Title.Length> 0).Average(p=> p.Title.Length);
+        
         
         }
+
+
 
     }
 }
